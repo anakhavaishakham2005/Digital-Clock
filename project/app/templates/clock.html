@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock (IST)</title>
+    <meta http-equiv="refresh" content="1">
+    <style>
+        
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e3e3e35d;
+            font-family: Arial, sans-serif;
+        }
+        .clock-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background:black;
+            color: #f01e0f;
+            padding: 20px;
+            border-radius: 10px;
+            border: 5px solid #ffffff;
+            box-shadow: 0 8px 16px #cf2020fc;
+            font-family: 'Courier New Extrabold', Courier, monospace;
+            -webkit-text-stroke: 0.2px #fff;
+        }
+        .time {
+            font-size: 5em;
+        }
+        .am-pm,
+        .time_zone {
+            font-size: 0.5em;
+        }
+    </style>
+    <!-- <script>
+        function updateClock() {
+            fetch('/')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const clockContainer = doc.querySelector('.clock-container').innerHTML;
+                    document.querySelector('.clock-container').innerHTML = clockContainer;
+                });
+        }
+        setInterval(updateClock, 1000);
+    </script>
+</head> -->
+<body>
+    <div class="clock-container">
+        <div class="time">{{ current_time|safe }}</div>
+    </div>
+</body>
+</html>
